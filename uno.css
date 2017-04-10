@@ -110,11 +110,23 @@
   background:#E6CA1E;
 }
 
+.card.black{
+  color:black;
+}
+
+.card.black .inner{
+  background:#black;
+}
+
 .card.num-0:before,
 .card.num-0:after{
   content:"0";
 }
 
+.card.num-*:before,
+.card.num-*:after{
+  content:"*";
+}
 .card.num-1:before,
 .card.num-1:after{
   content:"1";

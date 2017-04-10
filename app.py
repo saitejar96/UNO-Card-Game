@@ -88,7 +88,16 @@ def play_card(task_id):
     if not flag:
         return jsonify({"accepted":"No","win:":"No"}),201
     else:
-        if request.json["card"]["color"]!="No card":
+        if request.json["card"]["color"]=="No card":
+        	print("hole")
+        elif request.json["card"]["number"]=="wild" or request.json["card"]["number"]=="+4":
+            deck.append(last_card[0])
+            last_card[0] = current_card[0]
+            current_card[0] = request.json["card"]
+            # request.json["card"]["color"] = ""
+            #print(players[next_to_play[0]]["cards"].index(request.json["card"]))
+            players[next_to_play[0]]["cards"].remove({"color":"","number":request.json["card"]["number"],"special":"Yes"})
+        else:
             deck.append(last_card[0])
             last_card[0] = current_card[0]
             current_card[0] = request.json["card"]
