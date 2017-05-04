@@ -6,23 +6,16 @@ import random
 app = Flask(__name__)
 
 players = []
-
 winners = []
-
 inicards = []
-
 deck = []
-
 next_to_play = [0]
-
 last_card = [{
           "color": "red",
           "number": "+2",
           "special": "Yes"
         }]
-
 current_card = []
-
 clock = [True]
 
 colors = ["red","blue","green","yellow"]
